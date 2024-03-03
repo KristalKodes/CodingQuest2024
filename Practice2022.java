@@ -14,5 +14,21 @@ public class Practice2022{
         for(int i = 0; i < allScans.size(); i++){
             items.add(new Item(allScans.get(i)));
         }
+
+        for(int i = 0; i < items.size(); i ++){
+            if(items.get(i).getCategory().equals("Food")){
+                items.set(i, new Food(items.get(i).getQuantity()));
+            }else if(items.get(i).getCategory().equals("Frozen")){
+                items.set(i, new Frozen(items.get(i).getQuantity()));
+            }else if(items.get(i).getCategory().equals("Fuel")){
+                items.set(i, new Fuel(allScans.get(i)));
+            }else if(items.get(i).getCategory().equals("Mechancial")){
+                items.set(i, new Mechanical(items.get(i).getQuantity()));
+            }else{
+                items.set(i, new Water(items.get(i).getQuantity()));
+            }
+        }
+
+        System.out.println(Frozen.FrozenQuantity + " ");
     }
 }
