@@ -11,6 +11,11 @@ public class PurchaseTickets{
         List<String> ticketDetails = new ArrayList<String>();
         ticketDetails = Files.readAllLines(Paths.get("CodingQuest2024/Day1/TicketPriceDetails.txt"));
         
+        // int tripleA = 0;
+        // int tripleB = 0;
+        // int tripleC = 0;
+        // int tripleD = 0;
+        
         int solarSkiesPrice = 0;
         int celestialFlyerPrice = 0;
         int ryanSpacePrice = 0;
@@ -160,7 +165,46 @@ public class PurchaseTickets{
                 }
             }
         }
+
+        // for(int t = 0; t < ticketDetails.size(); t++){
+        //     String airline = ticketDetails.get(t).substring(0, ticketDetails.get(t).indexOf(":"));
+        //     boolean priceReduction = false;
+        //     int price = Integer.parseInt(ticketDetails.get(t).substring(ticketDetails.get(t).length()-4).trim());
+        //     if((ticketDetails.get(t).indexOf("Rebate") > 0) || (ticketDetails.get(t).indexOf("Discount") > 0)){
+        //         priceReduction = true;
+        //     }if(airline.equals("AAA")){
+        //         if(priceReduction){
+        //             tripleA -= price;
+        //         }else{
+        //             tripleA += price;
+        //         }
+        //     }else if(airline.equals("BBB")){
+        //         if(priceReduction){
+        //             tripleB -= price;
+        //         }else{
+        //             tripleB += price;
+        //         }
+        //     }else if(airline.equals("CCC")){
+        //         if(priceReduction){
+        //             tripleC -= price;
+        //         }else{
+        //             tripleC += price;
+        //         }
+        //     }else{
+        //         if(priceReduction){
+        //             tripleD -= price;
+        //         }else{
+        //             tripleD += price;
+        //         }
+        //     }
+        // }
+
         ArrayList<Integer> airlinePrices = new ArrayList<Integer>();
+
+        // airlinePrices.add(tripleA);
+        // airlinePrices.add(tripleB);
+        // airlinePrices.add(tripleC);
+        // airlinePrices.add(tripleD);
     
         airlinePrices.add(solarSkiesPrice);
         airlinePrices.add(celestialFlyerPrice);
