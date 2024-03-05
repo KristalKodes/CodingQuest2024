@@ -12,7 +12,7 @@ public class PurchaseTickets{
         ticketDetails = Files.readAllLines(Paths.get("CodingQuest2024/Day1/TicketPriceDetails.txt"));
         
         int solarSkiesPrice = 0;
-        int celestialFlierPrice = 0;
+        int celestialFlyerPrice = 0;
         int ryanSpacePrice = 0;
         int novaWingsPrice = 0;
         int neptuneExpressPrice = 0;
@@ -26,7 +26,7 @@ public class PurchaseTickets{
         int stellarJetPrice = 0;
         int lunaLinePrice = 0;
         int qantasSpacePrice = 0;
-        int starCruizerPrice = 0;
+        int starCruiserPrice = 0;
         int voyagerPrice = 0;
         int galaxyExpressPrice = 0;
         int nebulaAirPrice = 0;
@@ -35,7 +35,7 @@ public class PurchaseTickets{
         for(int t = 0; t < ticketDetails.size(); t++){
             String airline = ticketDetails.get(t).substring(0, ticketDetails.get(t).indexOf(":"));
             boolean priceReduction = false;
-            int price = Integer.parseInt(ticketDetails.get(3).substring(ticketDetails.get(3).length()-4).trim());
+            int price = Integer.parseInt(ticketDetails.get(t).substring(ticketDetails.get(t).length()-4).trim());
             if((ticketDetails.get(t).indexOf("Rebate") > 0) || (ticketDetails.get(t).indexOf("Discount") > 0)){
                 priceReduction = true;
             }if(airline.equals("SolarSkies")){
@@ -44,11 +44,11 @@ public class PurchaseTickets{
                 }else{
                     solarSkiesPrice += price;
                 }
-            }else if(airline.equals("CelestialFlier")){
+            }else if(airline.equals("CelestialFlyer")){
                 if(priceReduction){
-                    celestialFlierPrice -= price;
+                    celestialFlyerPrice -= price;
                 }else{
-                    celestialFlierPrice += price;
+                    celestialFlyerPrice += price;
                 }
             }else if(airline.equals("RyanSpace")){
                 if(priceReduction){
@@ -128,11 +128,11 @@ public class PurchaseTickets{
                 }else{
                     qantasSpacePrice += price;
                 }
-            }else if(airline.equals("StarCruizer")){
+            }else if(airline.equals("StarCruiser")){
                 if(priceReduction){
-                    starCruizerPrice -= price;
+                    starCruiserPrice -= price;
                 }else{
-                    starCruizerPrice += price;
+                    starCruiserPrice += price;
                 }
             }else if(airline.equals("Voyager")){
                 if(priceReduction){
@@ -163,7 +163,7 @@ public class PurchaseTickets{
         ArrayList<Integer> airlinePrices = new ArrayList<Integer>();
     
         airlinePrices.add(solarSkiesPrice);
-        airlinePrices.add(celestialFlierPrice);
+        airlinePrices.add(celestialFlyerPrice);
         airlinePrices.add(ryanSpacePrice);
         airlinePrices.add(novaWingsPrice);
         airlinePrices.add(neptuneExpressPrice);
@@ -177,7 +177,7 @@ public class PurchaseTickets{
         airlinePrices.add(stellarJetPrice);
         airlinePrices.add(lunaLinePrice);
         airlinePrices.add(qantasSpacePrice);
-        airlinePrices.add(starCruizerPrice);
+        airlinePrices.add(starCruiserPrice);
         airlinePrices.add(voyagerPrice);
         airlinePrices.add(galaxyExpressPrice);
         airlinePrices.add(nebulaAirPrice);
@@ -186,5 +186,6 @@ public class PurchaseTickets{
         for(int a = 0; a < airlinePrices.size(); a++){
             System.out.println(airlinePrices.get(a));
         }
+
     }
 }
