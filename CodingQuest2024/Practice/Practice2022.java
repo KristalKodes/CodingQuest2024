@@ -15,7 +15,7 @@ public class Practice2022{
         int totalWater = 0;
 
         List<String> allScans = new ArrayList<String>();
-        allScans = Files.readAllLines(Paths.get("Practice/Scans.txt"));
+        allScans = Files.readAllLines(Paths.get("CodingQuest2024/Practice/Scans.txt"));
         
         int totalScans = 0;
         for(int i = 0; i < allScans.size(); i++){
