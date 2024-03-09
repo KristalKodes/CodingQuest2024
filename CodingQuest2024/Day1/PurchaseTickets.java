@@ -40,7 +40,9 @@ public class PurchaseTickets{
         for(int t = 0; t < ticketDetails.size(); t++){
             String airline = ticketDetails.get(t).substring(0, ticketDetails.get(t).indexOf(":"));
             boolean priceReduction = false;
-            int price = Integer.parseInt(ticketDetails.get(t).substring(ticketDetails.get(t).length()-4).trim());
+            String firstSpace = ticketDetails.get(t).substring(ticketDetails.get(t).indexOf(" ") + 1);
+            String secondSpace = firstSpace.substring(firstSpace.indexOf(" ") + 1);
+            int price = Integer.parseInt(secondSpace);
             if((ticketDetails.get(t).indexOf("Rebate") > 0) || (ticketDetails.get(t).indexOf("Discount") > 0)){
                 priceReduction = true;
             }if(airline.equals("SolarSkies")){
@@ -48,6 +50,7 @@ public class PurchaseTickets{
                     solarSkiesPrice -= price;
                 }else{
                     solarSkiesPrice += price;
+                    System.out.println(ticketDetails.get(t) + ".");
                 }
             }else if(airline.equals("CelestialFlyer")){
                 if(priceReduction){
@@ -227,9 +230,12 @@ public class PurchaseTickets{
         airlinePrices.add(nebulaAirPrice);
         airlinePrices.add(cometAirPrice);
 
+        int min = airlinePrices.get(0);
         for(int a = 0; a < airlinePrices.size(); a++){
-            System.out.println(airlinePrices.get(a));
-        }
+            if(airlinePrices.get(a) < min){
+                min = airlinePrices.get(a);
+            }
+        }System.out.println(min);
 
     }
 }
