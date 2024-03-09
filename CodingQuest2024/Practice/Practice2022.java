@@ -13,6 +13,8 @@ public class Practice2022{
         int totalFuel = 0;
         int totalMechanical = 0;
         int totalWater = 0;
+        int totalSundry = 0;
+        int totalCleaning = 0;
 
         List<String> allScans = new ArrayList<String>();
         allScans = Files.readAllLines(Paths.get("CodingQuest2024/Practice/Scans.txt"));
@@ -30,6 +32,10 @@ public class Practice2022{
                 totalFuel = totalFuel + quantity;
             }else if(category.equals("Mechanical")){
                 totalMechanical = totalMechanical + quantity;
+            }else if(category.equals("Sundry")){
+                totalSundry = totalSundry + quantity;
+            }else if(category.equals("Cleaning")){
+                totalCleaning = totalCleaning + quantity;
             }else{
                 totalWater = totalWater + quantity;
             }
@@ -37,9 +43,9 @@ public class Practice2022{
         /*
          * >:( I don't know why my answer is incorrect.
          */
-        System.out.println(totalFood + " " + totalFrozen + " " + totalFuel + " " + totalMechanical + " " + totalWater);
+        System.out.println(totalFood + " " + totalFrozen + " " + totalFuel + " " + totalMechanical + " " + totalSundry + " " + totalCleaning + " " + totalWater);
 
-        System.out.println((totalFood % 100) + " " + (totalFrozen % 100) + " " + (totalFuel % 100) + " " + (totalMechanical % 100)  + " " + (totalWater % 100));
-        System.out.println((totalFood % 100) * (totalFrozen % 100) * (totalFuel % 100) * (totalMechanical % 100) * (totalWater % 100));
+        System.out.println((totalFood % 100) + " " + (totalFrozen % 100) + " " + (totalFuel % 100) + " " + (totalMechanical % 100)  + " " + (totalSundry % 100) + " " + (totalCleaning % 100) + " " + (totalWater % 100));
+        System.out.println((totalFood % 100) * (totalFrozen % 100) * (totalFuel % 100) * (totalMechanical % 100) * (totalSundry % 100) * (totalCleaning % 100) * (totalWater % 100));
     }
 }
